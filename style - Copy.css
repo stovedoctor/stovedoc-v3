@@ -1,0 +1,514 @@
+/* --- NEW 4-16-2026 MASTER RULES --- */
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+    color-scheme: dark;
+    --flame: #ff6600; 
+    --charcoal: #000000;
+    --ash: #e0e0e0;
+    --white: #ffffff;
+    --border-main: 2px solid var(--flame);
+}
+
+html { background-color: #000; }
+
+body {
+    background-color: #000000 !important;
+    color: var(--ash);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0; padding: 0;
+    
+    /* --- overflow-x: hidden;  what we had with no scroll bar at bottom of window. --- */
+    overflow-x: auto !important;
+    line-height: 1.4;
+}
+/* --- TIGHTENED BOOKING SECTION --- */
+.cta-section {
+    text-align: center;
+    padding: 0 0 60px 0; /* Kill the top padding entirely */
+    margin-top: -30px;    /* Change this from -10px to -30px to pull it UP */
+}
+
+/* --- PILL-SHAPED COMPACT BUTTON --- */
+.book-btn {
+    display: inline-block;
+    width: fit-content;
+    background: #eaa61d7c !important; /* Slightly more tint */
+    color: #ff8c00;
+    border: 2px solid #ff8c00;
+    /* Tight padding: 8px Top/Bottom, 25px Sides */
+    padding: 8px 15px !important; 
+    font-size: 1.1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    border-radius: 50px !important; /* Creates the rounded pill sides */
+    text-align: center;
+    transition: all 0.3s ease;
+    line-height: 1.1;
+}
+
+.btn-sub {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: block;
+    margin-top: 4px;
+    color: var(--white);
+    opacity: 0.8;
+}
+
+.book-btn:hover {
+    background: #ff8c00 !important;
+    color: #000 !important;
+    box-shadow: 0 0 15px rgba(255, 140, 0, 0.4); /* Subtle glow on hover */
+}
+h1, h2, h3, h4 { color: var(--flame); text-align: center; text-transform: uppercase; margin-bottom: 15px; }
+p { color: var(--white); text-align: left; font-size: 1rem; }
+
+a, a:link, a:visited, a:active { color: #ff9d00; text-decoration: underline; font-weight: 600; }
+a:hover { color: #ffffff; }
+
+/* --- SECTIONS & WRAPPERS --- */
+.section-wrapper {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* --- HERO / TOP HEADER --- */
+.topheader-vid {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Bumped for breathing room */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: var(--border-main);
+    padding: 15px 0; /* Creates the top/bottom "Surgical Tray" gap */
+}
+
+.bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: calc(100% - 30px); /* Subtracts the 15px top/bottom padding */
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+
+/* --- HERO CONTENT & LOGO --- */
+/* --- HERO CONTENT & LOGO (SURGICAL ALIGNMENT) --- */
+.header-content {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    /* ADJUST THIS: Use a negative % to slide the whole stack UP to hit the video flame */
+    margin-top: -5%; 
+}
+
+.hero-logo {
+    height: clamp(160px, 28vw, 280px) !important;
+    width: auto;
+    display: block;
+    margin: 0 auto -10px auto; /* Pulls H1 up into the logo shadow */
+    filter: drop-shadow(0 0 25px rgba(0,0,0,1));
+}
+
+.header-content h1 {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px #000000 !important;
+    font-size: clamp(0.85rem, 2vw, 1.1rem) !important; 
+    margin: 0 !important;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.header-content p {
+    color: #ff8c00 !important; 
+    font-size: clamp(0.75rem, 1.8vw, 0.95rem) !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    text-shadow: 2px 2px 4px #000000 !important;
+    margin: 2px 0 0 0 !important;
+    text-align: center !important;
+}
+/* --- THE OPTIONAL PILL BOX --- */
+.hero-pill {
+    background: rgba(0, 0, 0, 0.55) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 40px !important;
+    padding: 5px !important; 
+    box-shadow: 0 15px 50px rgba(0,0,0,1);
+    display: inline-block;
+}
+/* --- GRID & CARDS --- */
+/* --- THE DIAGNOSIS GRID (TIGHTENED) --- */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; /* Reduced gap between cards */
+    margin-top: 30px;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 4px solid var(--flame);
+    border-radius: 8px;
+    /* Tighter padding: 8px top, 15px sides/bottom */
+    padding: 8px 15px 15px 15px; 
+    transition: transform 0.2s ease;
+}
+
+.info-card h3 {
+    color: var(--flame);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.05rem;
+    /* Kills the "air" between the text and the orange line */
+    margin: 0 0 8px 0 !important; 
+    letter-spacing: 1px;
+}
+
+.info-card p {
+    color: var(--white);
+    text-align: left;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    /* Kills default bottom padding to keep the box tight */
+    margin: 0 !important; 
+}
+.doc-note {
+    border: var(--border-main);
+    background: rgba(255, 102, 0, 0.05);
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 30px auto;
+    max-width: 900px;
+}
+/* --- TRAY & VIDEO BOX and spotter LOGIC (CONSOLIDATED) --- */
+.spotter-wrapper, .video-wrapper {
+    position: relative !important;
+    width: 100%;
+    display: block;
+    min-height: 150px; 
+}
+
+.spotter-tray, .video-library {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px 0 20px 0;
+    scrollbar-width: thin; 
+    scrollbar-color: var(--flame) transparent;
+}
+
+/* Thin Orange Scrollbar for Chrome/Edge */
+.spotter-tray::-webkit-scrollbar, .video-library::-webkit-scrollbar { 
+    display: block; 
+    height: 6px; 
+}
+.spotter-tray::-webkit-scrollbar-thumb, .video-library::-webkit-scrollbar-thumb {
+    background: var(--flame);
+    border-radius: 10px;
+}
+
+.video-box {
+    flex: 0 0 180px; /* Locked width = No skyscraper height in split-screen */
+    aspect-ratio: 9 / 16;
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.video-box iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: 0;
+}
+
+/* --- SPOTTER CARDS (SURGICAL TIGHTNESS) --- */
+.spotter-card {
+    flex: 0 0 300px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 4px solid var(--flame);
+    border-radius: 8px;
+    padding: 8px 15px 15px 15px; /* Matched to Diagnosis */
+}
+
+.spotter-card h3 {
+    color: var(--flame);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.05rem;
+    margin: 0 0 8px 0 !important; 
+}
+
+.spotter-card p {
+    color: var(--white);
+    text-align: left;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 0 !important;
+}
+/* --- THE NAVIGATION ARROWS --- */
+/* --- MINIMALIST NAKED ARROWS --- */
+.scroll-arrow {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 60px; /* Taller hit area, easier to click */
+    background: transparent !important; /* No circle */
+    border: none !important; /* No border */
+    color: var(--flame) !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999 !important;
+    font-size: 2.5rem; /* Big enough to see without a border */
+    opacity: 0.4; /* Faded out so it doesn't hide text */
+    transition: opacity 0.3s, transform 0.2s;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.9); /* Shadows make it pop on top of images */
+}
+
+.scroll-arrow:hover { 
+    opacity: 1; /* Glows when you need it */
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Tucked right against the window edges */
+.arrow-left { left: 0 !important; }
+.arrow-right { right: 0 !important; }
+
+/* --- TELEHEARTH CLINIC PAINT (UPDATED) --- */
+/* --- THE CLINIC PAINT (STAYS OFF THE INDEX PAGE) --- */
+/* --- THE CLINIC PAINT (STRICT FRAME) --- */
+.hero-clinic {
+    /* 1. THE GAP (NEW VALUES): Changing to 95% cuts the gap by half */
+    width: 95% !important; 
+    max-width: 1150px !important; /* Bumped this up slightly to match the 95% look */
+    margin: 20px auto !important; /* Centers it and keeps air on top/bottom */
+    
+    /* 2. THE LEAK SEALER: Ensures the border stays visible in small windows */
+    box-sizing: border-box !important; 
+
+    /* 3. THE PINSTRIPING */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px; 
+    overflow: hidden; 
+
+    /* 4. THE IMAGE */
+    height: 400px !important; 
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('telehearth-full.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+/* 4. THE DARK PILL TRAY: From your screenshot */
+/* 4. THE DARK PILL TRAY: Keeps it from being full-width inside the frame */
+.hero-clinic .tray-header-box {
+    background: rgba(0, 0, 0, 0.7); 
+    padding: 15px 35px;            
+    border-radius: 60px;           
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: inline-block;         /* Forces the box to hug the text */
+}
+
+.tray-header-box {
+    background: rgba(0, 0, 0, 0.55);
+    padding: 15px 30px;
+    border-radius: 50px;
+    backdrop-filter: blur(4px);
+    margin-top: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pill-text-unit {
+    color: #ff8c00;
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    text-shadow: 2px 2px 4px #000;
+}
+
+
+
+
+/* --- NAVIGATION (CONSOLIDATED & TIGHT) --- */
+nav {
+    background: #000;
+    border-bottom: var(--border-main);
+    padding: 10px 0; /* Surgical tightness */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-brand {
+    font-weight: 900;
+    font-size: 1.6rem;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* The red box from your first block - kept for the TESTING stamp */
+.test-stamp {
+    color: #ff0000;
+    border: 1px solid #ff0000;
+    font-size: 0.7rem;
+    padding: 2px 5px;
+    vertical-align: middle;
+    margin-left: 5px;
+    text-transform: uppercase;
+}
+
+.nav-social { 
+    display: flex; 
+    gap: 12px; 
+    margin-bottom: 5px;
+}
+
+.nav-social img { 
+    height: 28px;
+    width: auto; 
+    opacity: 0.9; 
+}
+
+.nav-links { 
+    display: flex; 
+    gap: 15px; 
+    padding: 5px 0;
+}
+
+.nav-links a {
+    text-decoration: none !important;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.nav-links a.active-page { 
+    color: var(--flame); 
+    border-bottom: 2px solid var(--flame); 
+}
+
+/* --- MOBILE RULES (SURGICAL FINAL) --- */
+@media (max-width: 768px) {
+    /* Keep this here to prevent thumb-swipe "wobble" on mobile */
+    body { overflow-x: hidden; }
+
+    .topheader-vid {
+        height: 250px !important;
+        padding: 10px 0 !important;
+    }
+
+    /* --- NAVIGATION SAFETY NET --- */
+    .nav-container {
+        flex-direction: row; 
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0 15px;
+    }
+
+    .nav-brand { font-size: 1.1rem; flex: 1; text-align: left; }
+    .nav-social { margin-bottom: 0; gap: 10px; }
+    .nav-social img { height: 22px; }
+
+    .nav-links { 
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto; 
+        -webkit-overflow-scrolling: touch;
+        padding: 10px 0 5px 0;
+        gap: 15px;
+        scrollbar-width: none;
+    }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links a { font-size: 0.75rem; padding: 4px 2px; }
+
+    /* --- HERO LOGO & TEXT --- */
+    .hero-logo {
+        height: 180px !important;
+        margin-bottom: -5px !important;
+    }
+
+    .header-content {
+        margin-top: -10px !important;
+    }
+
+    /* --- LAYOUT GRID --- */
+    .grid-3 {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* --- VIDEO & SPOTTER SWIPE HINTS --- */
+    .video-library, .spotter-tray {
+        display: flex !important;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 15px;
+        padding: 0 20px 20px 20px !important;
+        justify-content: flex-start !important;
+        scrollbar-width: none;
+    }
+
+/* --- VIDEO BOX MOBILE FIX --- */
+    .video-box {
+        flex: 0 0 180px !important; /* Forces the small size even in split-screen */
+        scroll-snap-align: start;
+    }
+    .spotter-card {
+        flex: 0 0 80% !important; /* Leaves 20% for the next card peek */
+        scroll-snap-align: start; /* Docks left */
+    }
+
+ /*  .scroll-arrow { display: none !important; } ---- No arrows on touch screens */
+
+/* Inside your @media (max-width: 768px) block */
+.book-btn {
+    width: auto !important; /* Forces it to hug the text instead of stretching to 90% */
+    padding: 8px 15px !important; /* Your 15px side hug */
+    font-size: 1.1rem !important;
+}
+    
+    .btn-sub {
+        font-size: 0.7rem; /* Slightly smaller for mobile screens */
+    }
+    .hero-clinic {
+        max-width: 100%; /* Goes back to full-width on mobile */
+        margin: 0; 
+        border: none;
+        border-radius: 0;
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('telehearth-mb.webp');
+    }
+}
