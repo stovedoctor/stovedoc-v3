@@ -276,7 +276,10 @@ footer {
     .hero-clinic .tray-header-box { padding: 10px 20px !important; }
     .hero-clinic h1 { text-shadow: 3px 3px 8px #000 !important; }
 
-    .mobile-break { display: block !important; content: ""; margin-top: 5px; }
+    .mobile-break { 
+        display: block !important; 
+        content: ""; 
+        margin-top: 5px; }
 
     /* THIS IS THE PART THAT PULLS CARDS OFF THE EDGE */
     .service-tier-wrapper { 

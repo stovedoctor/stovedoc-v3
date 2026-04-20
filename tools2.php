@@ -7,10 +7,14 @@
 <section class="topheader-vid" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('handtoolsbits-lg.webp'); background-size: cover; background-position: center;">
     <div class="header-content">
         <img src="newstovedoc_logo.png" alt="The Stove Doc" class="hero-logo">
-        <h1>The Surgical Tray</h1>
-        <p>A successful procedure starts with the right instruments.</p>
+        <div class="tray-header-box">
+            <h1>The Surgical Tray</h1>
+            <div class="pill-text-unit">A quick successful procedure starts <span class="mobile-break"></span> with the right instruments.</div>
+        </div>
     </div>
 </section>
+
+
 
 <section id="surgical-setup-wrapper" style="margin-top: 50px; text-align: center;">
     
