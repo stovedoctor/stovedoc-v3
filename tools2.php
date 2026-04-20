@@ -30,26 +30,28 @@
 </div>
 </div>
 </div>
-    <div class="tool-row">
-        <div class="box-base look-solid">
-            <h3 style="color: var(--flame); border-bottom: 1px solid #333; padding-bottom: 10px;">1. Hardware Extraction</h3>
-            <ul style="list-style: none; padding: 0; line-height: 1.6;">
-                <li><strong>Torx T20:</strong> The "Master Key" for Enviro and specialized panels.</li>
-                <li><strong>Allen (Hex) Set:</strong> Standard & Metric. Critical for auger motor set-screws and Winslow P40 teardowns</li>
-                <li><strong>#2 Robertson:</strong> Square drive for Canadian and vintage hardware.</li>
-                <li><strong>Nut Drivers & Wrenches:</strong> 1/4", 5/16", 11/32", 3/8", 7/16", 1/2"  (SAE) + 9, 10, 12mm (Metric).</li>
-                <li><strong>Surgical Forceps (Pliers):</strong> Surgical Forceps: Channel Locks and needle-nose.</li>
-                <li><strong>Adjustable Spanner:</strong> 8" or 10" crescent for non-standard gas line fittings.</li>
-                <li><strong>1/4" Hex Shank Kit:</strong> Universal bits with extensions for deep-chassis access.</li>
-                <li><strong>Impact Driver:</strong> For extracting heat-cycled screws and nuts quickly.</li>
+    <section class="section-wrapper">
+    <div class="grid-2">
+        
+        <div class="info-card">
+            <h3 style="text-align: left; border-bottom: 1px solid var(--flame); padding-bottom: 10px;">The Tool Chest</h3>
+            <ul style="list-style: none; padding: 0; margin-top: 15px;">
+                <li style="margin-bottom: 12px; color: var(--white);">✔️ Multi-bit screwdriver (long)</li>
+                <li style="margin-bottom: 12px; color: var(--white);">✔️ Needle nose pliers</li>
+                <li style="margin-bottom: 12px; color: var(--white);">✔️ Drop light or headlamp</li>
+                <li style="margin-bottom: 12px; color: var(--white);">✔️ Small inspection mirror</li>
+                <li style="margin-bottom: 12px; color: var(--white);">✔️ 1/4", 5/16", 11/32", 3/8", 7/16" Nut drivers</li>
+                <li style="margin-bottom: 12px; color: var(--white);">✔️ Wire brush (stainless or brass)</li>
             </ul>
-            <p style="font-size: 0.85rem; color: var(--flame); font-style: italic; margin-top: 10px;">
-                <strong>Doctor's Tip:</strong> Ensure you have at least a 6" extension for your driver; many stove bolts are buried deep where standard tools can't reach.
-            </p>
         </div>
-        <div class="tool-photo">
-            <img src="handtoolsbits-sm.webp" alt="Stove Doc Tools" onclick="openDiagnostic('handtoolsbits-lg.webp')" style="cursor:zoom-in;">
+
+        <div style="text-align: center;">
+            <img src="handtoolsbits-lg.webp" alt="Surgical Tools" 
+                 style="width: 100%; max-width: 450px; height: auto; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6);">
         </div>
+
+    </div>
+</section>
     </div> <div class="tool-row">
         <div class="box-base look-solid">
             <h3 style="color:var(--flame); border-bottom: 2px solid #333; padding-bottom: 10px;">2. Vitals & Diagnostics (EKG)</h3>

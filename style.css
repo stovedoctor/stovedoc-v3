@@ -170,6 +170,9 @@ a:hover { color: #ffffff; }
 }
 
 /* --- GRID & CARDS --- */
+/* --- 2-COLUMN GRID (Desktop) --- */
+.grid-2 { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 30px; margin-top: 30px; align-items: start; }
+
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px; }
 
 .info-card, .spotter-card {
@@ -269,6 +272,7 @@ footer {
 @media (max-width: 768px) {
     .topheader-vid { height: 250px !important; }
     .hero-logo { height: 180px !important; }
+    .grid-2 { grid-template-columns: 1fr !important; gap: 20px; }
     .grid-3 { grid-template-columns: 1fr !important; }
     .spotter-card { flex: 0 0 80% !important; }
 
