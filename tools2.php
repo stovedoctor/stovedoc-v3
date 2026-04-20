@@ -45,9 +45,16 @@
             </ul>
         </div>
 
-        <div style="text-align: center;">
-            <img src="handtoolsbits-lg.webp" alt="Surgical Tools" 
-                 style="width: 100%; max-width: 450px; height: auto; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6);">
+        <div style="height: 100%; width: 100%; position: relative;">
+            <img src="handtoolsbits-lg.webp" alt="Tool Chest Thumbnail" 
+                 class="thumb-fit zoom-clickable"
+                 onclick="this.nextElementSibling.showModal()"
+                 style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6);">
+            
+            <dialog onclick="this.close()" style="background: rgba(0,0,0,0.9); border: none; width: 100%; height: 100%; max-width: 100vw; max-height: 100vh; padding: 0;">
+                <img src="handtoolsbits-lg.webp" style="max-width: 90vw; max-height: 90vh; border: 2px solid var(--flame); border-radius: 8px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); box-shadow: 0 0 50px rgba(255,102,0,0.4);">
+                <p style="position: fixed; bottom: 20px; width: 100%; text-align: center; color: #fff; font-size: 0.9rem; opacity: 0.7;">Click anywhere to close</p>
+            </dialog>
         </div>
 
     </div>
