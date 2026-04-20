@@ -52,19 +52,19 @@
     <section class="section-wrapper">
     <h2>Doctor's Orders: Pre-Clinic Checklist</h2>
     <div class="grid-3">
-        <a href="ul.jpg" target="_blank" class="info-card" style="text-decoration: none;">
+        <a href="ul.jpg" target="_blank" class="info-card" id="card-ul" style="text-decoration: none;">
             <h3>1. Initial Assessment</h3>
             <p><strong>UL ID Tag:</strong> High-res photo of Brand, Model & Serial.</p>
             <p><strong>Imaging:</strong> Shots of firebox BEFORE you clean it.</p>
         </a>
 
-        <a href="pilot.jpeg" target="_blank" class="info-card" style="text-decoration: none;">
+        <a href="pilot.jpeg" target="_blank" class="info-card" id="card-pilot" style="text-decoration: none;">
             <h3>2. Technical Deep-Dive</h3>
             <p><strong>Internals:</strong> High-res views of pilot assembly and valve.</p>
             <p><strong>Access:</strong> Have all panels open before we start.</p>
         </a>
 
-        <a href="tools2.php" class="info-card" style="text-decoration: none;">
+        <a href="tools2.php" class="info-card" id="card-tools" style="text-decoration: none;">
             <h3>3. Tools & Connectivity</h3>
             <p style="color:var(--flame); font-weight:bold; margin-bottom: 10px;">Click for the Surgical Tool Tray.</p>
             <p><strong>The Uplink:</strong> Smartphone ready with a strong video signal.</p>
