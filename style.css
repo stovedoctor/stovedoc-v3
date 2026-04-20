@@ -260,8 +260,10 @@ footer {
 #card-tools::before { background-image: url('handtoolsbits-lg.webp'); }
 
 /* Make the image pop slightly on hover */
+/* Make the image much clearer on hover */
 #card-ul:hover::before, #card-pilot:hover::before, #card-tools:hover::before {
-    opacity: 0.3;
+    opacity: 0.7; /* Cranking this up from 0.3 */
+    filter: contrast(1.1) brightness(1.1); /* Adds a little extra punch to the details */
 }
 /* --- MOBILE RULES (PIXEL 8 PRO OPTIMIZED) --- */
 @media (max-width: 768px) {
