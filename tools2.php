@@ -24,10 +24,10 @@
     </div>
 
     <div class="intro-block" style="margin-top: 15px;">
-        <p style="font-style: italic; color: var(--ash);">
-            "Preparation is the difference between a 20-minute fix <span class="mobile-break"></span> and a 2-hour headache."
-        </p>
-    </div>
+    <p style="font-style: italic; color: var(--ash); font-size: clamp(0.95rem, 4vw, 1.15rem); line-height: 1.3;">
+        "Preparation is the difference between a<span class="mobile-break"></span>20-minutefix and a 2-hour headache."
+    </p>
+</div>
 </div>
 </div>
     <div class="tool-row">
