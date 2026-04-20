@@ -1,33 +1,14 @@
 
 <?php 
-// version 6 3:44pm 4/10/2026 
-$v = filemtime('style.css'); 
+  $page_title = "The Surgical Tray | The Stove Doc"; 
+  include 'header.php'; 
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Surgical Tool Tray | The Stove Doc</title>
-    <link rel="stylesheet" href="style.css?v=<?php echo $v; ?>">
-    <meta name="darkreader-lock"> 
-</head>
 
-<body>
-<?php include 'nav.php'; ?>
-    
-    
-    
-<section class="hero-header hero-tools">
-    <div class="hero-overlay-content tray-header-box">
-        <h1 style="color:#fff; margin:0; text-transform:uppercase; font-size: 2.2rem; text-shadow: 3px 3px 5px #000;">
-            The Surgical Tray
-        </h1>
-        
-        <div class="pill-text-unit" style="color: #ff8c00; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-top: 10px; text-shadow: 2px 2px 4px #000;">
-            A quick successful procedure starts with the right instruments.<br> 
-            Stage your tools before the Doctor scrubs in for your session.
-        </div>
+<section class="topheader-vid" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('handtoolsbits-lg.webp'); background-size: cover; background-position: center;">
+    <div class="header-content">
+        <img src="newstovedoc_logo.png" alt="The Stove Doc" class="hero-logo">
+        <h1>The Surgical Tray</h1>
+        <p>A successful procedure starts with the right instruments.</p>
     </div>
 </section>
 
