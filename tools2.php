@@ -14,21 +14,21 @@
     </div>
 </section>
 
-
-
-<section id="surgical-setup-wrapper" style="margin-top: 50px; text-align: center;">
+<div class="section-wrapper" style="margin-top: 0; padding-top: 5px;">
     
-    <h2>The Surgical Setup</h2>
+    <h2 style="margin-top: 0; margin-bottom: 5px;">The Surgical Setup</h2>
 
-    <div style="display: flex; justify-content: center; margin: 30px 0;">
+    <div style="display: flex; justify-content: center; margin-top: 0;">
         <img src="tooltray-button.webp" alt="The Stove Doc Master Surgical Tray" 
-             style="width: 100%; max-width: 650px; height: auto; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.8);">
+             style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.8);">
     </div>
 
-    <div class="intro-block">
-        <p style="font-style: italic; color: var(--ash);">"Preparation is the difference between a 20-minute fix and a 2-hour headache."</p>
+    <div class="intro-block" style="margin-top: 15px;">
+        <p style="font-style: italic; color: var(--ash);">
+            "Preparation is the difference between a 20-minute fix <span class="mobile-break"></span> and a 2-hour headache."
+        </p>
     </div>
-</section>
+</div>
 </div>
     <div class="tool-row">
         <div class="box-base look-solid">
