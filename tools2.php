@@ -52,40 +52,7 @@
 
     </div>
 </section>
-    </div> <div class="tool-row">
-        <div class="box-base look-solid">
-            <h3 style="color:var(--flame); border-bottom: 2px solid #333; padding-bottom: 10px;">2. Vitals & Diagnostics (EKG)</h3>
-            <p style="font-size: 0.9rem; color: #ccc; margin-bottom: 15px;">
-                Critical for when a <strong>gas fireplace pilot will not light</strong> or your pellet stove 'logic' stops communicating.
-            </p>
-            <ul style="list-style: none; padding: 0; line-height: 1.8;">
-                <li><strong>Digital Multimeter:</strong> Your stethoscope for <strong>thermopile testing</strong> and millivolt readings. (True RMS preferred).</li>
-                <li><strong>The Jumper Kit:</strong> Short wire with male spades on each end. A diagnostic "bypass" to see if a sensor has flatlined.</li>
-                <li><strong>Wiring Tools:</strong> Standard cutters, strippers, and crimpers. Just don't butcher the job.</li>
-                <li><strong>High-Temp Spares:</strong> A staged tray of butt connectors and Male/Female spade terminals for "transplants."</li>
-                <li><strong>Non-Contact Probe:</strong> (Optional) Nice for a quick safety "pulse" check, but not strictly required for the procedure.</li>
-            </ul>
-        </div>
-        <div class="tool-photo">
-            <img src="electrical-sm.webp" alt="Stove Doc Tools" onclick="openDiagnostic('electrical-lg.webp')" style="cursor:zoom-in;">
-        </div>
-    </div> <div class="tool-row">
-        <div class="box-base look-solid">
-            <h3 style="color:var(--flame); border-bottom: 2px solid #333; padding-bottom: 10px;">3. Surgical Support Gear</h3>
-            <p style="font-size: 0.9rem; color: #ccc; margin-bottom: 15px;">Maintaining a sterile field and performing "External Decontamination" on extracted components.</p>
-            <ul style="list-style: none; padding: 0; line-height: 1.8;">
-                <li><strong>LED Headlamp:</strong> Hands-free illumination is mandatory for deep cavity inspections.</li>
-                <li><strong>Ash-Ready Shop Vac:</strong> With a small diameter hose attachment for reaching tight "night spots."</li>
-                <li><strong>Surgical Brushes:</strong> A variety of sizes for "scrubbing" components before they go back in.</li>
-                <li><strong>External Cleaning:</strong> A small high-volume blower or compressor (used outside) to clear dust bunnies from motors and electronics.</li>
-                <li><strong>Surgical Drape:</strong> A heavy-duty drop cloth to protect the home and keep the field clean.</li>
-                <li><strong>The Uplink:</strong> Strong 5G or Wi-Fi signal at the hearth so the Doctor has a clear "view" of the procedure.</li>
-            </ul>
-        </div>
-        <div class="tool-photo">
-            <img src="brush-sm.webp" alt="Stove Doc Tools" onclick="openDiagnostic('brush-lg.webp')" style="cursor:zoom-in;">
-        </div>
-    </div> <div style="text-align:center; margin: 60px 0;">
+    <div style="text-align:center; margin: 60px 0;">
         <a href="telehearth_booking.php" class="cta-btn" style="font-size: 1.3rem; padding: 15px 40px; text-decoration: none; background: var(--flame); color: #fff; border-radius: 5px; font-weight: bold; text-transform: uppercase;">
             Book the Doctor Now
         </a>
