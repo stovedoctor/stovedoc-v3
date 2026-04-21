@@ -59,21 +59,6 @@
 
     </div>
 </section>
-    <div style="text-align:center; margin: 60px 0;">
-        <a href="telehearth_booking.php" class="cta-btn" style="font-size: 1.3rem; padding: 15px 40px; text-decoration: none; background: var(--flame); color: #fff; border-radius: 5px; font-weight: bold; text-transform: uppercase;">
-            Book the Doctor Now
-        </a>
-    </div>
-
-</div>
-
-	
-<?php include 'footer.php'; ?>
-    
-    <div id="tool-lightbox" style="display:none; position:fixed; z-index:9000; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); align-items:center; justify-content:center; cursor:pointer;" onclick="this.style.display='none'">
-    <span style="position:absolute; top:20px; right:30px; color:#fff; font-size:50px; font-weight:bold; line-height:1;">&times;</span>
-    <img id="lightbox-img" src="" style="max-width:90%; max-height:90%; border:2px solid var(--flame); border-radius:8px; box-shadow: 0 0 40px rgba(0,0,0,1);">
-</div>
 <section class="section-wrapper">
     <div class="grid-2">
         <div style="height: 100%; width: 100%; position: relative;">
@@ -152,6 +137,18 @@
         </div>
     </div>
 </section>
+    <div style="text-align:center; margin: 60px 0;">
+        <a href="telehearth_booking.php" class="cta-btn" style="font-size: 1.3rem; padding: 15px 40px; text-decoration: none; background: var(--flame); color: #fff; border-radius: 5px; font-weight: bold; text-transform: uppercase;">
+            Book the Doctor Now
+        </a>
+    </div>
 
-</body>S
+</div>
+
+	
+<?php include 'footer.php'; ?>
+    
+
+
+</body>
 </html>
