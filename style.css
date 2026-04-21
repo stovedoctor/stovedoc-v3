@@ -299,6 +299,44 @@ footer {
     position: absolute; top: 50%; left: 50%;
     transform: translate(-50%, -50%);
 }
+/* Container that holds both the list and the background image */
+.bg-tool-card {
+    position: relative;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    overflow: hidden; /* Keeps the image inside the corners */
+    transition: all 0.3s ease;
+    cursor: zoom-in;
+}
+
+/* The actual image sitting behind the text */
+.card-bg-image {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.15; /* Dimmed out so you can read the text */
+    transition: opacity 0.4s ease;
+}
+S
+/* Hover effect to "Clear the Field" */
+.bg-tool-card:hover .card-bg-image {
+    opacity: 0.5; /* Brightens up on hover */
+}
+
+/* Forces the text to stay on top of the image */
+.bg-tool-content {
+    position: relative;
+    z-index: 2;
+    pointer-events: none; /* Let clicks pass through the text to the container */
+}
+
+
+
+
 
 /* --- MOBILE RULES (PIXEL 8 PRO OPTIMIZED) --- */
 @media (max-width: 768px) {
