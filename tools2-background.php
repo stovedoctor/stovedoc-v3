@@ -1,6 +1,6 @@
 
 <?php 
-  $page_title = "The Surgical Tray | The Stove Doc"; 
+  $page_title = "The Surgical Tray test | The Stove Doc"; 
   include 'header.php'; 
 ?>
 
@@ -16,7 +16,7 @@
 
 <div class="section-wrapper" style="margin-top: 0; padding-top: 5px;">
     
-    <h2 style="margin-top: 0; margin-bottom: 5px;">The Surgical Setup</h2>
+    <h2 style="margin-top: 0; margin-bottom: 5px;">The Surgical Setup  TEST </h2>
 
     <div style="display: flex; justify-content: center; margin-top: 0;">
         <img src="tooltray-button.webp" alt="The Stove Doc Master Surgical Tray" 

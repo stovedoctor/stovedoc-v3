@@ -1,4 +1,4 @@
-/* --- V3.1 CLEAN SWEEP - 4-19-2026 --- */
+/* --- V3.3 CLEAN SWEEP - 4-19-2026 --- */
 *, *::before, *::after { box-sizing: border-box; }
 
 :root {
@@ -311,7 +311,7 @@ footer {
     cursor: zoom-in;
 }
 
-/* The actual image sitting behind the text */
+/* 1 The actual image sitting behind the text */
 .card-bg-image {
     position: absolute;
     top: 0; left: 0;
