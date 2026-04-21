@@ -64,8 +64,8 @@
             </ul>
         </div>
         <div style="height: 100%; width: 100%; position: relative;">
-            <img src="multimeter-tray.webp" alt="Electrical Tray" class="thumb-fit zoom-clickable" onclick="this.nextElementSibling.showModal()" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6);">
-            <dialog class="zoom-modal" onclick="this.close()"><img src="multimeter-tray.webp"></dialog>
+            <img src="electrical-lg.webp" alt="Electrical Tray" class="thumb-fit zoom-clickable" onclick="this.nextElementSibling.showModal()" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6);">
+            <dialog class="zoom-modal" onclick="this.close()"><img src="electrical-lg.webp"></dialog>
         </div>
     </div>
 </section>
