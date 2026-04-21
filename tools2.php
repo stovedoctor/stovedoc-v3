@@ -74,13 +74,84 @@
     <span style="position:absolute; top:20px; right:30px; color:#fff; font-size:50px; font-weight:bold; line-height:1;">&times;</span>
     <img id="lightbox-img" src="" style="max-width:90%; max-height:90%; border:2px solid var(--flame); border-radius:8px; box-shadow: 0 0 40px rgba(0,0,0,1);">
 </div>
+<section class="section-wrapper">
+    <div class="grid-2">
+        <div style="height: 100%; width: 100%; position: relative;">
+            <img src="pilot.jpeg" alt="Electrical Tray Thumbnail" 
+                 class="thumb-fit zoom-clickable"
+                 onclick="this.nextElementSibling.showModal()"
+                 style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6);">
+            
+            <dialog class="zoom-modal" onclick="this.close()">
+                <img src="pilot.jpeg" alt="Electrical Zoom">
+            </dialog>
+        </div>
 
-<script>
-function openDiagnostic(imgUrl) {
-    document.getElementById('lightbox-img').src = imgUrl;
-    document.getElementById('tool-lightbox').style.display = 'flex';
-}
-</script>
+        <div class="info-card">
+            <h3 style="text-align: left; border-bottom: 1px solid var(--flame); padding-bottom: 10px;">The Electrical Tray</h3>
+            <ul style="list-style: none; padding: 0; margin-top: 15px;">
+                <li style="margin-bottom: 12px; color: var(--white);">✔️ Multimeter (with continuity)</li>
+                <li style="margin-bottom: 12px; color: var(--white);">✔️ Wire strippers / crimpers</li>
+                <li style="margin-bottom: 12px; color: var(--white);">✔️ Assorted spade & ring terminals</li>
+                <li style="margin-bottom: 12px; color: var(--white);">✔️ Electrical tape</li>
+                <li style="margin-bottom: 12px; color: var(--white);">✔️ Jumper wires (alligator clips)</li>
+                <li style="margin-bottom: 12px; color: var(--white);">✔️ Contact cleaner</li>
+            </ul>
+        </div>
+    </div>
+</section>
 
-</body>
+<section class="section-wrapper">
+    <div class="grid-2">
+        <div class="info-card">
+            <h3 style="text-align: left; border-bottom: 1px solid var(--flame); padding-bottom: 10px;">The Specialized Kit</h3>
+            <ul style="list-style: none; padding: 0; margin-top: 15px;">
+                <li style="margin-bottom: 12px; color: var(--white);">✔️ Manometer (Gas Pressure)</li>
+                <li style="margin-bottom: 12px; color: var(--white);">✔️ Digital thermometer</li>
+                <li style="margin-bottom: 12px; color: var(--white);">✔️ Full set hex keys (Standard & Metric)</li>
+                <li style="margin-bottom: 12px; color: var(--white);">✔️ Small socket set (1/4" drive)</li>
+                <li style="margin-bottom: 12px; color: var(--white);">✔️ Gas leak detector solution</li>
+            </ul>
+        </div>
+
+        <div style="height: 100%; width: 100%; position: relative;">
+            <img src="handtoolsbits-lg.webp" alt="Specialized Kit Thumbnail" 
+                 class="thumb-fit zoom-clickable"
+                 onclick="this.nextElementSibling.showModal()"
+                 style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6);">
+            
+            <dialog class="zoom-modal" onclick="this.close()">
+                <img src="handtoolsbits-lg.webp" alt="Specialized Zoom">
+            </dialog>
+        </div>
+    </div>
+</section>
+
+<section class="section-wrapper">
+    <div class="grid-2">
+        <div style="height: 100%; width: 100%; position: relative;">
+            <img src="ul.jpg" alt="Deep Clean Thumbnail" 
+                 class="thumb-fit zoom-clickable"
+                 onclick="this.nextElementSibling.showModal()"
+                 style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6);">
+            
+            <dialog class="zoom-modal" onclick="this.close()">
+                <img src="ul.jpg" alt="Deep Clean Zoom">
+            </dialog>
+        </div>
+
+        <div class="info-card">
+            <h3 style="text-align: left; border-bottom: 1px solid var(--flame); padding-bottom: 10px;">The Deep Clean Bag</h3>
+            <ul style="list-style: none; padding: 0; margin-top: 15px;">
+                <li style="margin-bottom: 12px; color: var(--white);">✔️ HEPA Ash Vacuum</li>
+                <li style="margin-bottom: 12px; color: var(--white);">✔️ Nylon & Brass wire brushes</li>
+                <li style="margin-bottom: 12px; color: var(--white);">✔️ Stove glass cleaner</li>
+                <li style="margin-bottom: 12px; color: var(--white);">✔️ Paint scraper / putty knife</li>
+                <li style="margin-bottom: 12px; color: var(--white);">✔️ Shop rags or paper towels</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+</body>S
 </html>
