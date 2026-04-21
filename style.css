@@ -321,7 +321,7 @@ footer {
     opacity: 0.15; /* Dimmed out so you can read the text */
     transition: opacity 0.4s ease;
 }
-S
+
 /* Hover effect to "Clear the Field" */
 .bg-tool-card:hover .card-bg-image {
     opacity: 0.5; /* Brightens up on hover */
