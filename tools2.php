@@ -30,9 +30,8 @@
 </div>
 </div>
 </div>
-    <section class="section-wrapper">
+   <section class="section-wrapper">
     <div class="grid-2">
-        
         <div class="info-card">
             <h3 style="text-align: left; border-bottom: 1px solid var(--flame); padding-bottom: 10px;">The Tool Chest</h3>
             <ul style="list-style: none; padding: 0; margin-top: 15px;">
@@ -44,34 +43,15 @@
                 <li style="margin-bottom: 12px; color: var(--white);">✔️ Wire brush (stainless or brass)</li>
             </ul>
         </div>
-
         <div style="height: 100%; width: 100%; position: relative;">
-            <img src="handtoolsbits-lg.webp" alt="Tool Chest Thumbnail" 
-                 class="thumb-fit zoom-clickable"
-                 onclick="this.nextElementSibling.showModal()"
-                 style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6);">
-            
-            <dialog onclick="this.close()" style="background: rgba(0,0,0,0.9); border: none; width: 100%; height: 100%; max-width: 100vw; max-height: 100vh; padding: 0;">
-                <img src="handtoolsbits-lg.webp" style="max-width: 90vw; max-height: 90vh; border: 2px solid var(--flame); border-radius: 8px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); box-shadow: 0 0 50px rgba(255,102,0,0.4);">
-                <p style="position: fixed; bottom: 20px; width: 100%; text-align: center; color: #fff; font-size: 0.9rem; opacity: 0.7;">Click anywhere to close</p>
-            </dialog>
+            <img src="handtoolsbits-lg.webp" alt="Tool Chest" class="thumb-fit zoom-clickable" onclick="this.nextElementSibling.showModal()" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6);">
+            <dialog class="zoom-modal" onclick="this.close()"><img src="handtoolsbits-lg.webp"></dialog>
         </div>
-
     </div>
 </section>
+
 <section class="section-wrapper">
     <div class="grid-2">
-        <div style="height: 100%; width: 100%; position: relative;">
-            <img src="pilot.jpeg" alt="Electrical Tray Thumbnail" 
-                 class="thumb-fit zoom-clickable"
-                 onclick="this.nextElementSibling.showModal()"
-                 style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6);">
-            
-            <dialog class="zoom-modal" onclick="this.close()">
-                <img src="pilot.jpeg" alt="Electrical Zoom">
-            </dialog>
-        </div>
-
         <div class="info-card">
             <h3 style="text-align: left; border-bottom: 1px solid var(--flame); padding-bottom: 10px;">The Electrical Tray</h3>
             <ul style="list-style: none; padding: 0; margin-top: 15px;">
@@ -82,6 +62,10 @@
                 <li style="margin-bottom: 12px; color: var(--white);">✔️ Jumper wires (alligator clips)</li>
                 <li style="margin-bottom: 12px; color: var(--white);">✔️ Contact cleaner</li>
             </ul>
+        </div>
+        <div style="height: 100%; width: 100%; position: relative;">
+            <img src="multimeter-tray.webp" alt="Electrical Tray" class="thumb-fit zoom-clickable" onclick="this.nextElementSibling.showModal()" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6);">
+            <dialog class="zoom-modal" onclick="this.close()"><img src="multimeter-tray.webp"></dialog>
         </div>
     </div>
 </section>
@@ -98,33 +82,15 @@
                 <li style="margin-bottom: 12px; color: var(--white);">✔️ Gas leak detector solution</li>
             </ul>
         </div>
-
         <div style="height: 100%; width: 100%; position: relative;">
-            <img src="handtoolsbits-lg.webp" alt="Specialized Kit Thumbnail" 
-                 class="thumb-fit zoom-clickable"
-                 onclick="this.nextElementSibling.showModal()"
-                 style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6);">
-            
-            <dialog class="zoom-modal" onclick="this.close()">
-                <img src="handtoolsbits-lg.webp" alt="Specialized Zoom">
-            </dialog>
+            <img src="manometer-tray.webp" alt="Specialized Kit" class="thumb-fit zoom-clickable" onclick="this.nextElementSibling.showModal()" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6);">
+            <dialog class="zoom-modal" onclick="this.close()"><img src="manometer-tray.webp"></dialog>
         </div>
     </div>
 </section>
 
 <section class="section-wrapper">
     <div class="grid-2">
-        <div style="height: 100%; width: 100%; position: relative;">
-            <img src="ul.jpg" alt="Deep Clean Thumbnail" 
-                 class="thumb-fit zoom-clickable"
-                 onclick="this.nextElementSibling.showModal()"
-                 style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6);">
-            
-            <dialog class="zoom-modal" onclick="this.close()">
-                <img src="ul.jpg" alt="Deep Clean Zoom">
-            </dialog>
-        </div>
-
         <div class="info-card">
             <h3 style="text-align: left; border-bottom: 1px solid var(--flame); padding-bottom: 10px;">The Deep Clean Bag</h3>
             <ul style="list-style: none; padding: 0; margin-top: 15px;">
@@ -134,6 +100,10 @@
                 <li style="margin-bottom: 12px; color: var(--white);">✔️ Paint scraper / putty knife</li>
                 <li style="margin-bottom: 12px; color: var(--white);">✔️ Shop rags or paper towels</li>
             </ul>
+        </div>
+        <div style="height: 100%; width: 100%; position: relative;">
+            <img src="ashvac-tray.webp" alt="Deep Clean Bag" class="thumb-fit zoom-clickable" onclick="this.nextElementSibling.showModal()" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6);">
+            <dialog class="zoom-modal" onclick="this.close()"><img src="ashvac-tray.webp"></dialog>
         </div>
     </div>
 </section>
