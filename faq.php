@@ -1,29 +1,16 @@
-<?php $v = filemtime('style.css'); ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ | The Stove Doc. - Expert Stove Repair by hearthtools</title>
-    <link rel="stylesheet" href="style.css?v=<?php echo $v; ?>">
-     <meta name="darkreader-lock"> 
-</head>
-<body>
+<?php include 'header.php'; ?>
 
-<?php include 'nav.php'; ?>
-    
-    
-<section class="hero-video-area hero-compact">
-    <video autoplay muted loop playsinline class="bg-video">
-        <source src="timeline2.mp4" type="video/mp4">
-    </video>
-    <div class="hero-overlay-content">
-        <img src="newstovedoc_logo.png" alt="The Stove Doc" class="main-body-logo">
-        <div class="tray-header-box box-base look-solid" style="padding: 10px 25px !important; border: 2px solid var(--flame); border-radius: 50px;">
-            <h2 style="color:#fff; text-transform:uppercase; letter-spacing: 2px; margin:0;">Frequently Asked Questions</h2>
+<section class="hero-section" style="background-image: url('faqheader.webp');">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="logo-container">
+            <img src="newstovedoc_logo.png" alt="The Stove Doc Logo" class="hero-logo-centered">
         </div>
+        <h1>Remote Support & FAQ</h1>
     </div>
 </section>
+
+<main class="main-container">
 
 <div class="section-wrapper" style="margin-top: 60px;">
     <div class="faq-accordion" style="max-width: 900px; margin: 0 auto; width: 100%;"> 
