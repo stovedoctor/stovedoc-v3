@@ -1,4 +1,4 @@
-/* --- V3.3 CLEAN SWEEP - 4-19-2026 --- */
+/* --- V4 done with index, telehearth and tools pages - 4-21-2026 6-13-pm --- */
 *, *::before, *::after { box-sizing: border-box; }
 
 :root {
@@ -84,7 +84,7 @@ a:hover { color: #ffffff; }
 .section-wrapper {
     max-width: 1200px;
     margin: 15px auto;
-    padding: 0 20px;
+    padding: 0 10px;
     width: 100%;
 }
 
@@ -111,14 +111,19 @@ a:hover { color: #ffffff; }
     opacity: 0.8;
 }
 
-.header-content { position: relative; z-index: 5; text-align: center; margin-top: -5%; }
-.hero-logo { height: clamp(160px, 28vw, 280px) !important; width: auto; display: block; margin: 0 auto -10px auto; filter: drop-shadow(0 0 25px rgba(0,0,0,1)); }
+.header-content { position: relative; 
+    z-index: 5; text-align: center; margin-top: 0; }
+.hero-logo { height: clamp(130px, 22vw, 240px) !important; 
+    width: auto; 
+    display: block; 
+    margin: 0 auto 2px auto; 
+    filter: drop-shadow(0 0 25px rgba(0,0,0,1)); }
 
 .header-content h1 {
     color: #ffffff !important;
     text-shadow: 2px 2px 4px #000000 !important;
-    font-size: clamp(0.85rem, 2vw, 1.1rem) !important; 
-    margin: 0 !important;
+    font-size: clamp(1.2rem, 3vw, 1.8rem) !important; 
+    margin: 2px !important;
     line-height: 1;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -166,6 +171,7 @@ a:hover { color: #ffffff; }
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-top: 10px;
+    
     text-shadow: 2px 2px 4px #000;
 }
 
@@ -300,15 +306,17 @@ footer {
     transform: translate(-50%, -50%);
 }
 /* Container that holds both the list and the background image */
+/* --- THE BASE CARD (Everyone) --- */
+/* --- THE BASE CARD (Everyone) --- */
 .bg-tool-card {
     position: relative;
-    padding: 30px;
-    margin-bottom: 30px;
+    padding: 12px 15px; /* Tightened Green/Pink zones */
+    margin-bottom: 20px;
     border-radius: 12px;
     border: 1px solid #333;
-    overflow: hidden; /* Keeps the image inside the corners */
+    overflow: hidden;
     transition: all 0.3s ease;
-    cursor: zoom-in;
+    cursor: pointer;
 }
 
 /* 1 The actual image sitting behind the text */
@@ -318,30 +326,66 @@ footer {
     width: 100%; height: 100%;
     object-fit: cover;
     z-index: 1;
-    opacity: 0.15; /* Dimmed out so you can read the text */
+    opacity: 0.35; /* Base visibility */
     transition: opacity 0.4s ease;
 }
 
-/* Hover effect to "Clear the Field" */
-.bg-tool-card:hover .card-bg-image {
-    opacity: 0.5; /* Brightens up on hover */
+/* --- THE DESKTOP-ONLY "SURGICAL" UPGRADES --- */
+@media (hover: hover) {
+    .bg-tool-card:hover {
+        /* This changes the 'finger' to a magnifying glass with a '+' */
+        cursor: zoom-in; 
+    }
+
+    /* Brighten image on hover */
+    .bg-tool-card:hover .card-bg-image {
+        opacity: 0.8;
+    }
+
+    /* Add the Orange "+" hint tag in the corner */
+    .bg-tool-card:hover::after {
+        content: "🔍+"; 
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: var(--flame);
+        color: #fff;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: bold;
+        z-index: 3;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        pointer-events: none; /* Prevents the tag from blocking the click */
+    }
 }
 
-/* Forces the text to stay on top of the image */
+/* Forces the text to stay on top of the image with depth */
 .bg-tool-content {
     position: relative;
     z-index: 2;
-    pointer-events: none; /* Let clicks pass through the text to the container */
+    pointer-events: none;
+    /* This creates the 'float' effect */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.9), 0px 0px 10px rgba(0,0,0,0.5);
 }
-
-
+/* Ensure the headers specifically have a strong anchor */
+.bg-tool-content h3 {
+    text-shadow: 3px 3px 6px rgba(0,0,0,1);
+    margin-top: 0;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+.bg-tool-content ul {
+    margin-top: 10px;
+    line-height: 1.5;
+}
 
 
 
 /* --- MOBILE RULES (PIXEL 8 PRO OPTIMIZED) --- */
 @media (max-width: 768px) {
     .topheader-vid { height: 250px !important; }
-    .hero-logo { height: 180px !important; }
+    .hero-logo { height: 140px !important; }
     .grid-2 { grid-template-columns: 1fr !important; gap: 20px; }
  /* Shrinks the image thumbnail on the Pixel 8 Pro */
     .grid-2 img.thumb-fit { max-width: 250px !important; margin: 0 auto; display: block; }
