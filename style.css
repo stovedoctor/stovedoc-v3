@@ -339,7 +339,7 @@ footer {
 
     /* Brighten image on hover */
     .bg-tool-card:hover .card-bg-image {
-        opacity: 0.8;
+        opacity: 0.5;
     }
 
     /* Add the Orange "+" hint tag in the corner */
