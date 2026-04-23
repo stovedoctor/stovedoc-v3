@@ -84,5 +84,3 @@
     I do not service cook stoves or ranges.
 </div>
 <?php include 'footer.php'; ?>
-</body>
-</html>

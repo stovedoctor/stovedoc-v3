@@ -1,4 +1,4 @@
-/* --- V3.3 CLEAN SWEEP - 4-19-2026 --- */
+/* --- V4 - 4-22-2026 5:48PM--- */
 *, *::before, *::after { box-sizing: border-box; }
 
 :root {
@@ -185,6 +185,14 @@ a:hover { color: #ffffff; }
     margin-top: 25px; 
     align-items: stretch; /* Forces both columns (text and image) to be the SAME height */
 }
+/* --- SYMMETRIC GRID FOR TESTIMONIALS --- */
+.grid-equal-2 { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; /* Exact 50/50 split on desktop */
+    gap: 10px; 
+    margin-top: 15px; 
+    align-items: stretch; /* Keeps card heights equal */
+}
 
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px; }
 
@@ -219,7 +227,25 @@ a:hover { color: #ffffff; }
 .video-box { flex: 0 0 180px; aspect-ratio: 9 / 16; background: #000; border-radius: 8px; overflow: hidden; position: relative; }
 .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 .spotter-card { flex: 0 0 300px; border-top: none; border-left: 4px solid var(--flame); }
+/* --- UNIVERSAL LINE BREAK (Global) --- */
+/* --- SURGICAL LEGACY FIXES --- */
+.global-break {
+    display: block !important;
+    content: "";
+    margin-top: 20px; /* Adjust this for the vertical gap */
+}
 
+.legacy-quote {
+    color: var(--flame);
+    font-weight: 800;
+    font-style: italic;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    text-align: center !important;
+}
 /* --- ARROWS --- */
 .scroll-arrow {
     position: absolute; top: 50%; transform: translateY(-50%);
@@ -231,6 +257,32 @@ a:hover { color: #ffffff; }
 .scroll-arrow:hover { opacity: 1; }
 .arrow-left { left: 0; }
 .arrow-right { right: 0; }
+/* --- TIMELINE SCROLL TRAY --- */
+.timeline-wrapper { 
+    position: relative; 
+    width: 100%; 
+    margin-top: 10px; 
+}
+
+.timeline-tray { 
+    display: flex; 
+    overflow-x: auto; 
+    gap: 20px; 
+    padding: 10px 0 20px 0; 
+    scrollbar-width: none; /* Hides scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hides scrollbar for IE/Edge */
+    scroll-behavior: smooth;
+}
+
+.timeline-tray::-webkit-scrollbar { 
+    display: none; /* Hides scrollbar for Chrome/Safari */
+}
+
+.timeline-tray .info-card { 
+    flex: 0 0 350px; /* Keeps the cards at a fixed width */
+    border-top: none; 
+    border-left: 4px solid var(--flame); 
+}
 
 /* --- THE FOOTER WELD (2-COL DESKTOP / 1-COL MOBILE) --- */
 footer { 
@@ -379,8 +431,50 @@ footer {
     margin-top: 10px;
     line-height: 1.5;
 }
+/* --- FAQ ACCORDION SURGERY --- */
+.faq-card {
+    border-left: 6px solid var(--flame) !important; /* Thick orange accent from your screenshot */
+    margin-bottom: 15px;
+}
 
+.faq-card summary {
+    list-style: none;
+    outline: none;
+}
 
+.faq-card summary::-webkit-details-marker {
+    display: none; /* Hides the default arrow */
+}
+
+.faq-card summary h3::before {
+    content: "▶ "; /* Your custom arrow from the screenshot */
+    font-size: 0.8rem;
+    color: var(--ash);
+    margin-right: 10px;
+    transition: transform 0.3s;
+}
+
+.faq-card[open] summary h3::before {
+    content: "▼ "; /* Rotates arrow when open */
+}
+
+.faq-content {
+    padding: 10px 0 10px 25px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    pointer-events: auto !important; /* Ensures links inside work */
+}
+/* Fixes the click and removes the zoom effects for FAQs */
+.faq-card summary {
+    pointer-events: auto !important; 
+}
+
+.faq-card:hover {
+    cursor: default !important; 
+}
+
+.faq-card:hover::after {
+    display: none !important; 
+}
 
 /* --- MOBILE RULES (PIXEL 8 PRO OPTIMIZED) --- */
 @media (max-width: 768px) {
@@ -389,17 +483,26 @@ footer {
     .grid-2 { grid-template-columns: 1fr !important; gap: 20px; }
  /* Shrinks the image thumbnail on the Pixel 8 Pro */
     .grid-2 img.thumb-fit { max-width: 250px !important; margin: 0 auto; display: block; }
+    .grid-equal-2 { 
+        grid-template-columns: 1fr !important; /* Stacks cards vertically on phones */
+    }
     .grid-3 { grid-template-columns: 1fr !important; }
     .spotter-card { flex: 0 0 80% !important; }
 
     .hero-clinic { width: 100% !important; margin: 0 0 10px 0 !important; border: none !important; height: 65vw !important; }
     .hero-clinic .tray-header-box { padding: 10px 20px !important; }
     .hero-clinic h1 { text-shadow: 3px 3px 8px #000 !important; }
-
+    .legacy-quote { 
+        font-size: 1.4rem !important; 
+        letter-spacing: 1px !important; 
+    }
     .mobile-break { 
         display: block !important; 
         content: ""; 
         margin-top: 5px; }
+
+    .doc-note { padding: 15px !important; } /* Shaves the inner margin to give text more room */
+}
 
     /* THIS IS THE PART THAT PULLS CARDS OFF THE EDGE */
     .service-tier-wrapper { 
@@ -410,6 +513,9 @@ footer {
         display: grid !important; 
         grid-template-columns: 1fr !important; 
         gap: 20px;
+    }
+    .timeline-tray .info-card { 
+        flex: 0 0 85%; /* Shows most of the card on your Pixel 8 Pro */
     }
 }
 
