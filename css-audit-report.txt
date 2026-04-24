@@ -1,0 +1,290 @@
+CSS AUDIT REPORT
+style.css vs. index.php, header.php, footer.php, telehearth_booking.php, tools2.php, faq.php, legacy.php
+Generated: 2026-04-24
+================================================================================
+
+
+CRITICAL ISSUES
+================================================================================
+
+1. STRAY ORPHAN CLOSING BRACE — CSS PARSE ERROR
+   File: style.css, lines 505-521
+
+   The @media (max-width: 768px) block closes correctly on line 505.
+   However, the three rules that follow are OUTSIDE any media query,
+   making them global rules that apply on all screen sizes. Then on
+   line 520 there is an orphaned "}" with no matching opening brace.
+
+   Affected rules that escaped the mobile block (now apply globally):
+     .service-tier-wrapper { padding: 0 23px !important; }
+     .service-tier-wrapper .grid-3 { grid-template-columns: 1fr !important; }
+     .timeline-tray .info-card { flex: 0 0 85%; }
+
+   The desktop @media (min-width: 769px) block later in the file overrides
+   .service-tier-wrapper and .service-tier-wrapper .grid-3, so those are
+   partially saved. But .timeline-tray .info-card { flex: 0 0 85%; } has
+   NO desktop override, so timeline cards on legacy.php are always 85% wide
+   instead of the intended 350px fixed width.
+
+   Recommendation: Re-open the @media (max-width: 768px) block to include
+   those three rules, and remove the orphan closing brace on line 520.
+
+--------------------------------------------------------------------------------
+
+2. footer.php INLINE <style> BLOCK CONFLICTS WITH AND OVERRIDES style.css
+   Files: footer.php, style.css
+
+   footer.php contains a full <style> block that redefines rules already
+   declared in style.css. Because <style> blocks in the <body> are parsed
+   after the external <link rel="stylesheet"> in <head>, the inline block
+   always wins at equal specificity.
+
+   Conflicting properties:
+     .footer-grid  grid-template-columns:  style.css = "1fr 1fr"
+                                           footer.php = "auto 1fr"  <-- WINS
+     .footer-grid  gap:                    style.css = "40px"
+                                           footer.php = "30px"      <-- WINS
+     .footer-col   font-size:              style.css = "0.95rem"
+                                           footer.php = "0.9rem"    <-- WINS
+
+   Additionally, style.css has a bare "footer { ... }" element selector,
+   but footer.php uses <footer class="site-footer"> styled by .site-footer.
+   These are split definitions that are easy to lose track of.
+
+   Recommendation: Remove .footer-grid and .footer-col from style.css
+   entirely since footer.php owns them, OR consolidate all footer rules
+   into style.css and remove the <style> block from footer.php.
+
+
+HIGH PRIORITY ISSUES
+================================================================================
+
+3. .bg-tool-content WITH pointer-events:none APPLIED TO <summary> ELEMENTS
+   Files: faq.php, style.css
+
+   In faq.php, the FAQ <summary> elements are written as:
+     <summary class="bg-tool-content">
+
+   In style.css, .bg-tool-content has:
+     .bg-tool-content { pointer-events: none; ... }
+
+   This is overridden by a later rule:
+     .faq-card summary { pointer-events: auto !important; }
+
+   It works for now, but if the rule order ever changes the FAQ accordion
+   stops being clickable entirely. The .bg-tool-content class also applies
+   unnecessary text-shadow styling to the <summary> heading.
+
+   Recommendation: Remove .bg-tool-content from the <summary> elements in
+   faq.php. Create a dedicated .faq-summary class if custom styling is needed.
+
+--------------------------------------------------------------------------------
+
+4. .tray-header-box SCOPED TO .hero-clinic ONLY — INVISIBLE ON 3 PAGES
+   Files: style.css, tools2.php, faq.php, legacy.php
+
+   style.css defines:
+     .hero-clinic .tray-header-box { background: transparent !important; ... }
+
+   But .tray-header-box is used on four pages:
+     telehearth_booking.php — inside .hero-clinic  (rule applies)     OK
+     tools2.php             — inside .topheader-vid (rule does NOT apply)
+     faq.php                — inside .topheader-vid (rule does NOT apply)
+     legacy.php             — inside .topheader-vid (rule does NOT apply)
+
+   On tools2.php, faq.php, and legacy.php, .tray-header-box has no CSS
+   rules applied to it at all. It works visually only because HTML block
+   elements inherit parent layout naturally. Any intentional styling added
+   to .tray-header-box in the future would silently fail on those pages.
+
+   Recommendation: Add a standalone .tray-header-box rule to style.css
+   and remove the .hero-clinic parent scope restriction.
+
+
+MEDIUM PRIORITY ISSUES
+================================================================================
+
+5. HARDCODED #ff6600 INSTEAD OF var(--flame) IN nav.php AND footer.php
+   Files: nav.php, footer.php
+
+   Both inline <style> blocks hardcode the brand orange (#ff6600) instead
+   of using the CSS variable var(--flame). Inline <style> blocks CAN use
+   CSS variables from :root — the browser resolves them at render time
+   regardless of where the <style> tag sits.
+
+   Affected properties in nav.php:
+     border-bottom: 2px solid #ff6600
+     .nav-links a.active-page { color: #ff6600; border-bottom: 2px solid #ff6600; }
+
+   Affected properties in footer.php:
+     border-top: 6px solid #ff6600
+     .footer-col a { color: #ff6600; }
+
+   Recommendation: Replace all #ff6600 instances with var(--flame) so a
+   single color change in :root updates everything.
+
+--------------------------------------------------------------------------------
+
+6. .cta-btn CLASS USED IN tools2.php IS NOT DEFINED IN style.css
+   File: tools2.php, line 99
+
+   tools2.php uses:
+     <a href="telehearth_booking.php" class="cta-btn" style="...">
+
+   .cta-btn does not exist in style.css. All styling is done inline.
+   The rest of the site uses .book-btn for CTA buttons.
+
+   Recommendation: Replace class="cta-btn" with class="book-btn" to match
+   the rest of the site, and remove the redundant inline styles.
+
+--------------------------------------------------------------------------------
+
+7. faq.php MISSING $page_title VARIABLE
+   File: faq.php
+
+   faq.php starts directly with:
+     <?php include 'header.php'; ?>
+   without setting $page_title first.
+
+   The header.php fallback kicks in:
+     <title><?php echo isset($page_title) ? $page_title : "The Stove Doc | Expert Diagnostics"; ?></title>
+
+   The FAQ page always shows the generic fallback title in the browser tab
+   and in search engine results.
+
+   Recommendation: Add at the top of faq.php:
+     <?php $page_title = "Remote Support & FAQ | The Stove Doc"; include 'header.php'; ?>
+
+--------------------------------------------------------------------------------
+
+8. .main-container CLASS IS UNDEFINED IN style.css
+   Files: faq.php, legacy.php
+
+   Both faq.php and legacy.php use:
+     <main class="main-container">
+
+   .main-container does not exist in style.css. The <main> element renders
+   with browser defaults only.
+
+   Recommendation: Either add a .main-container rule to style.css or
+   remove the class if it serves no purpose.
+
+--------------------------------------------------------------------------------
+
+9. DUPLICATE COMMENT LINE IN style.css
+   File: style.css, lines 361-362
+
+     /* --- THE BASE CARD (Everyone) --- */
+     /* --- THE BASE CARD (Everyone) --- */
+     .bg-tool-card { ... }
+
+   Indicates a copy-paste editing artifact.
+
+   Recommendation: Remove the duplicate comment line.
+
+--------------------------------------------------------------------------------
+
+10. content: "" APPLIED TO REAL HTML ELEMENTS (INVALID CSS)
+    File: style.css
+
+    .global-break and .mobile-break both use:
+      content: "";
+
+    The "content" property only works on CSS pseudo-elements (::before,
+    ::after). Applying it to real HTML elements has no effect and is invalid.
+    The display: block and margin-top properties are doing all the work.
+
+    Recommendation: Remove the "content: "";" lines from .global-break
+    and .mobile-break.
+
+--------------------------------------------------------------------------------
+
+11. .spotter-card SPLIT ACROSS TWO SEPARATE RULE BLOCKS (CASCADE CONFUSION)
+    File: style.css
+
+    .spotter-card is defined in two places:
+      Line 199 (grouped with .info-card):
+        background, border, border-top: 4px solid var(--flame), border-radius,
+        padding, box-shadow, transition
+
+      Line 229 (standalone):
+        flex: 0 0 300px;
+        border-top: none;       <-- overrides the border-top from line 199
+        border-left: 4px solid var(--flame);
+
+    The second block silently overrides border-top. Someone reading line 199
+    would see border-top: 4px solid var(--flame) and assume that is the card
+    style, not realizing it is cancelled 30 lines later.
+
+    Recommendation: Merge both .spotter-card declarations into one block,
+    or add a comment at line 199 noting that the border-top is overridden.
+
+
+LOW PRIORITY ISSUES
+================================================================================
+
+12. UNNECESSARY !important IN .intro-block p
+    File: style.css
+
+    .intro-block p uses !important on color and text-shadow:
+      color: #ffffff !important;
+      text-shadow: none !important;
+
+    The global p rule already sets color: var(--white) which resolves to
+    #ffffff. These !important declarations were added defensively to fight
+    other rules rather than by design, and make future overrides harder.
+
+    Recommendation: Remove !important from color and text-shadow in
+    .intro-block p.
+
+--------------------------------------------------------------------------------
+
+13. 1px BREAKPOINT GAP BETWEEN MOBILE AND DESKTOP MEDIA QUERIES
+    File: style.css
+
+    Mobile: @media (max-width: 768px)
+    Desktop: @media (min-width: 769px)
+
+    At exactly 768px width, neither mobile NOR desktop overrides apply.
+    This is a rare edge case but is not the conventional standard.
+
+    Recommendation: Use max-width: 767px and min-width: 768px instead.
+
+--------------------------------------------------------------------------------
+
+14. "TEST" PLACEHOLDER TEXT IN tools2.php PAGE TITLE AND HEADING
+    File: tools2.php
+
+    Line 3:  $page_title = "The Surgical Tray test | The Stove Doc";
+    Line 19: <h2>The Surgical Setup  TEST </h2>
+
+    These appear to be leftover development labels, not production-ready.
+
+    Recommendation: Update the page title to something like
+    "The Surgical Tray | The Stove Doc" and remove "TEST" from the heading.
+
+
+================================================================================
+SUMMARY TABLE
+================================================================================
+
+  #   Severity  Issue
+  --  --------  ----------------------------------------------------------------
+   1  CRITICAL  Stray orphan } causing CSS parse error + 3 rules escaped mobile
+   2  CRITICAL  footer.php inline <style> conflicts with and overrides style.css
+   3  HIGH      .bg-tool-content + pointer-events:none on <summary> (fragile)
+   4  HIGH      .tray-header-box scoped to .hero-clinic only (missing 3 pages)
+   5  MEDIUM    Hardcoded #ff6600 instead of var(--flame) in nav.php, footer.php
+   6  MEDIUM    .cta-btn used in tools2.php but not defined in style.css
+   7  MEDIUM    faq.php missing $page_title — generic title in browser/SEO
+   8  MEDIUM    .main-container class undefined in style.css
+   9  MEDIUM    Duplicate comment line in style.css
+  10  MEDIUM    content:"" on real HTML elements (invalid, no effect)
+  11  MEDIUM    .spotter-card split across two rule blocks (cascade confusion)
+  12  LOW       Unnecessary !important in .intro-block p
+  13  LOW       1px breakpoint gap between 768px and 769px media queries
+  14  LOW       "TEST" placeholder text in tools2.php
+
+================================================================================
+END OF REPORT
+================================================================================
