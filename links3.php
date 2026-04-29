@@ -16,6 +16,14 @@ $img_v = time(); // The "Nuclear" option for testing images
 <body>
 <?php include 'nav.php'; ?>
 
+
+/* TOOLBOX FRAME EXPERIMENT */
+    border: 14px solid #b30000 !important; /* Heavy Toolbox Red */
+    border-bottom: 25px solid #800000 !important; /* Darker red base/drawer */
+    border-radius: 6px; 
+    /* The inset shadow creates a silver 'metal rim' right inside the red lid */
+    box-shadow: inset 0 0 0 4px #aaa, inset 0 0 15px rgba(0,0,0,0.8), 0 10px 30px rgba(0,0,0,0.6);
+
   <section class="hero-header hero-tools hero-compact">
     <div class="hero-overlay-content tray-header-box">
         <h1 style="color:#fff; margin:0; text-transform:uppercase; font-size: 2.2rem; text-shadow: 3px 3px 5px #000;">
@@ -27,7 +35,42 @@ $img_v = time(); // The "Nuclear" option for testing images
         </div>
     </div>
 </section>
+<section id="triage" class="section-wrapper" style="scroll-margin-top: 150px;">
+    <h2 style="margin-bottom: 5px;">THE DOC'S SYMPTOM SPOTTERS</h2>
     
+    <div class="intro-block">
+        <p><strong>Don't guess and waste money on parts.</strong>
+        <span class="mobile-break"></span> 
+        Spot the symptom, then book the Doc.</p>
+    </div>
+
+</section>
+    <div class="spotter-wrapper">
+<div class="scroll-arrow arrow-left" onclick="document.getElementById('spot-tray').scrollBy({left: -480, behavior: 'smooth'})">&#10094;</div>
+<div class="scroll-arrow arrow-right" onclick="document.getElementById('spot-tray').scrollBy({left: 480, behavior: 'smooth'})">&#10095;</div>        <div class="spotter-tray" id="spot-tray">
+            <div class="spotter-card">
+                <h3>PELPRO</h3>
+                <p><strong>SYMPTOM:</strong> Blower hums but won't spin.</p>
+                <p><strong>THE REALITY:</strong> It’s rarely a dead motor. There’s a specific voltage drop or a simple repair. I’ll help you find it in minutes.</p>
+            </div>
+            <div class="spotter-card">
+                <h3>WHITFIELD</h3>
+                <p><strong>SYMPTOM:</strong> "Lazy" flame even after a deep clean.</p>
+                <p><strong>THE REALITY:</strong> You’ve missed the critical hidden chambers. I’ll show you exactly where the ash is hiding.</p>
+            </div>
+            <div class="spotter-card">
+                <h3>ENVIRO</h3>
+                <p><strong>SYMPTOM:</strong> Blower comes on, but no feed AND ignition.</p>
+                <p><strong>THE REALITY:</strong> Before you drop $400 on a board, let's test a safety switch. 98% of the time, the board is fine.</p>
+            </div>
+            <div class="spotter-card">
+                <h3>HARMAN</h3>
+                <p><strong>SYMPTOM:</strong> Status light blinks 3 times and shuts down.</p>
+                <p><strong>THE REALITY:</strong> Your ESP probe is "blind." We'll verify if the sensor is actually dead or just lying to the board.</p>
+            </div>
+            </div>
+    </div>
+</section>    
     
     <div class="section-wrapper" style="max-width: 1000px; margin: 40px auto 10px auto; text-align: left;">
     <h2 style="color: var(--flame); border-bottom: 2px solid var(--flame); display: inline-block; padding-bottom: 5px; text-transform: uppercase;">

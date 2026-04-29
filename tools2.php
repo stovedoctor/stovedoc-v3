@@ -4,7 +4,7 @@
   include 'header.php'; 
 ?>
 
-<section class="topheader-vid" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('handtoolsbits-lg.webp'); background-size: cover; background-position: center;">
+<section class="hero-tooltray"> 
     <div class="header-content">
         <img src="newstovedoc_logo.png" alt="The Stove Doc" class="hero-logo">
         <div class="tray-header-box">
@@ -120,15 +120,15 @@
                 Skip the 2-week wait. <span class="mobile-break"></span> Book your troubleshooting session now.
             </p>
 
-           <div style="text-align: center;">
-    <span class="book-btn" style="display: inline-flex; align-items: center; gap: 10px;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-        START YOUR PROCEDURE
-    </span>
-</div>
+            <div style="text-align: center;">
+                <span class="book-btn" style="display: inline-flex; align-items: center; gap: 10px; padding: 15px 35px !important; border-radius: 6px !important; font-size: 1rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    START YOUR PROCEDURE
+                </span>
+            </div>
         </a>
 
-        <div style="margin-top: 20px; color: #ffffff; font-size: 0.85rem; font-style: italic;">
+        <div style="margin-top: 20px; color: #666; font-size: 0.85rem; font-style: italic;">
             "Stop guessing. Start fixing. Let's get your stove or fireplace burning."
         </div>
     </div>
